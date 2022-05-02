@@ -1,0 +1,123 @@
+/* GLOBAL */
+.active-nav {
+    /* border-bottom: solid 1px #ff9900; */
+    color: #ff9900;
+}
+
+/* Bebas Neue - Bold
+    Herr Von Muellerhoff, Mr Dafoe - carly
+*/
+
+
+.header-container {
+    z-index: 11111;
+    position: sticky;
+    top: 0px;
+    height: 80px;
+    overflow: hidden;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container-bg,.header-container-bg-not-Home {
+    background-color: white;
+    color: black;
+}
+
+
+.header-content {
+    width: 85%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+}
+.login_cart_btn{
+    display: flex;
+    align-items: center;
+}
+
+.nav-open-btn,
+.nav-close-btn {
+    display: none;
+    cursor: pointer;
+}
+.header-social{
+    display: none;
+    width: 70%;
+    position: relative;
+    bottom: -200px;
+}
+
+@media screen and (max-width:686px) {
+    .header-container{
+        height: 80px;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    
+        position: fixed;
+        top: 0px;
+        right: 0px;
+    
+        padding-top: 30px;
+        background-color: rgba(0, 0, 0, 0.9);
+    
+        width: 70%;
+        height: 110vh;
+
+        /* transition: all 5s; */
+    }
+    .nav-links-active{
+        display: flex;
+    }
+
+    .nav-links a {
+        color: white;
+    }
+    .login_cart_btn{
+        flex-direction: column;
+    }
+
+    .nav-open-btn {
+        display: block;
+    }
+
+    .nav-close-btn {
+        display: flex;
+        color: white;
+    }
+    .header-social{
+        display: flex;
+        padding: 0px 60px;
+    }
+
+    .active-nav {
+        /* border-bottom: solid 1px #ff9900; */
+        color: #ff9900;
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin: 5px 14px;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    /* border-bottom: solid 1px #ff9900; */
+    color: #ff9900;
+    font-weight: 600;
+}

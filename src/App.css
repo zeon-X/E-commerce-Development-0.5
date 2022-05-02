@@ -1,38 +1,39 @@
+/* Bebas Neue - Bold
+    Herr Von Muellerhoff, Mr Dafoe - carly
+*/
+
+
 .App {
-  text-align: center;
+    background-color: white;
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App_home{
+    background: url('./assets/devn-JmmXKlJ8MKQ-unsplash.jpg');
+    background-position: initial;
+    background-size: 100% 850px;
+    background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media screen and (max-width:686px) {
+    .App{
+        background-size: 200% 1070px;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* GLOBAL  */
+
+.classic-btn {
+    padding: 14px 40px;
+    border-radius: 30px;
+    border: 1px solid rgb(0, 162, 255);
+
+
+    background-color: rgb(0, 162, 255);
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.classic-btn:hover {
+    background-color: transparent;
+    color: rgb(0, 162, 255);
 }
