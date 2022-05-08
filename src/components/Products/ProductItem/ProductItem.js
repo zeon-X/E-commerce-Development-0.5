@@ -21,7 +21,7 @@ const ProductItem = () => {
                         // borderTopRightRadius: "8px", borderTopLeftRadius: "8px",
                         borderRadius: "4px"
                     }}
-                    src={"https://scontent.fdac22-1.fna.fbcdn.net/v/t39.30808-6/270050028_157682069924977_2042270255991414777_n.jpg?stp=dst-jpg_p600x600&_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeHsR2SOjjQdMYhkZj6N5fY_CH8YPAqlsFsIfxg8CqWwW3QLadcuuPwvfa6WC4e48wAAz3jhSQ9OzWsy1dEKU1Z9&_nc_ohc=3QrylFiGc_AAX9XaNmc&_nc_ht=scontent.fdac22-1.fna&oh=00_AT_xe9XiOi8k_hi4kEh6pRyvQIUr6-SHCAYitB3c7hkYdQ&oe=6273AC51"}
+                    src={"https://static-01.daraz.com.bd/p/9e214fffb1d1aa5e17b4eb96a5a7e8e8.jpg"}
                     alt="" />
 
 

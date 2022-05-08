@@ -22,9 +22,12 @@
     align-items: center;
 }
 
-.header-container-bg,.header-container-bg-not-Home {
-    background-color: white;
-    color: black;
+.header-container-bg,
+.header-container-bg-not-Home {
+    /* background-color: white;
+    color: black; */
+    background-color: black;
+    color: white;
 }
 
 
@@ -41,7 +44,8 @@
     align-items: center;
 
 }
-.login_cart_btn{
+
+.login_cart_btn {
     display: flex;
     align-items: center;
 }
@@ -51,7 +55,8 @@
     display: none;
     cursor: pointer;
 }
-.header-social{
+
+.header-social {
     display: none;
     width: 70%;
     position: relative;
@@ -59,35 +64,38 @@
 }
 
 @media screen and (max-width:686px) {
-    .header-container{
+    .header-container {
         height: 80px;
     }
+
     .nav-links {
         display: none;
         flex-direction: column;
         /* justify-content: center; */
         align-items: center;
-    
+
         position: fixed;
         top: 0px;
         right: 0px;
-    
+
         padding-top: 30px;
         background-color: rgba(0, 0, 0, 0.9);
-    
+
         width: 70%;
         height: 110vh;
 
         /* transition: all 5s; */
     }
-    .nav-links-active{
+
+    .nav-links-active {
         display: flex;
     }
 
     .nav-links a {
         color: white;
     }
-    .login_cart_btn{
+
+    .login_cart_btn {
         flex-direction: column;
     }
 
@@ -99,7 +107,8 @@
         display: flex;
         color: white;
     }
-    .header-social{
+
+    .header-social {
         display: flex;
         padding: 0px 60px;
     }
@@ -119,5 +128,25 @@
 .nav-links a:hover {
     /* border-bottom: solid 1px #ff9900; */
     color: #ff9900;
+    /* font-weight: 600; */
+}
+
+
+
+
+.logout_btn {
+    font-size: 14px;
+    margin: 5px 14px;
+}
+
+.logout_btn:hover {
+    color: #ff9900;
     font-weight: 600;
+}
+
+.hover_Effect:hover{
+    /* color: #ff9900;
+    font-weight: 600; */
+    background-color: #ff9900;
+    border-radius: 30px;
 }

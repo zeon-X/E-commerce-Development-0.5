@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomLink from '../../utilities/CustomLink/CustomLink';
 import './Header.css';
 import fb from '../../assets/socials/facebook.png';
 import insta from '../../assets/socials/instagram.png';
 import { useLocation } from 'react-router-dom';
+import { getAuth, signOut } from "firebase/auth";
 
-const Header = () => {
+const Header = ({ user, setUser }) => {
+
+    const [logedin, setLogedin] = useState(false);
+
+    useEffect(() => {
+        user.auth ? setLogedin(true) : setLogedin(false);
+    }, [user]);
+
+    console.log(user);
+
+
+
+
+
+
 
     const location = useLocation();
     const match = location.pathname !== '/';
@@ -21,6 +36,22 @@ const Header = () => {
             document.querySelector('.header-container').classList.remove('shadow-lg');
         }
     })
+
+
+
+    //LOGOUT
+    const auth = getAuth();
+    const signOutUser = () => {
+        signOut(auth)
+            .then(() => {
+                setUser({});
+                setLogedin(false);
+                console.log("loggd out....")
+            }).catch((error) => {
+                console.error(error);
+            });
+    }
+
 
 
     return (
@@ -50,7 +81,50 @@ const Header = () => {
                     <CustomLink to="/contact">Contact</CustomLink>
                     <CustomLink to="/ali-express">Ali-Express</CustomLink>
                     <div className='login_cart_btn'>
-                        <CustomLink to="/login">Login</CustomLink>
+                        {
+                            !logedin
+                                ?
+                                <CustomLink to="/login">Login</CustomLink>
+                                :
+                                <div className='flex '>
+                                    {/* USER INFO  */}
+                                    <div
+                                        className='flex justify-center items-center px-3 shadow-xl hover_Effect'
+                                        style={{
+                                            cursor: "pointer"
+                                        }}
+                                    >
+
+                                        {/* USER  PHOTO  */}
+                                        <img src={user.photoURL}
+                                            style={{
+                                                borderRadius: "50%",
+                                                height: "30px"
+                                            }}
+                                            alt=""
+
+                                        />
+
+                                        {/* USER NAME  */}
+                                        <p className='ml-1 '
+                                            style={{
+                                                fontSize: "14px", fontWeight: "400"
+                                            }}
+                                        >{user.displayName.slice(0, 5)}</p>
+
+                                    </div>
+
+
+                                    <svg
+                                        onClick={() => {
+                                            signOutUser();
+                                        }}
+                                        xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 logout_btn" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                </div>
+
+                        }
                         <CustomLink to="/cart">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />

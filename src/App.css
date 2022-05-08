@@ -5,10 +5,10 @@
 
 .App {
     background-color: white;
-    
+
 }
 
-.App_home{
+.App_home {
     background: url('./assets/devn-JmmXKlJ8MKQ-unsplash.jpg');
     background-position: initial;
     background-size: 100% 850px;
@@ -16,8 +16,14 @@
 }
 
 @media screen and (max-width:686px) {
-    .App{
-        background-size: 200% 1070px;
+    .App {
+        background-size: 300% 850px;
+    }
+}
+
+@media screen and (min-width:687px) and (max-width:1099x) {
+    .App {
+        background-size: 700% 850px;
     }
 }
 
@@ -36,4 +42,8 @@
 .classic-btn:hover {
     background-color: transparent;
     color: rgb(0, 162, 255);
+}
+
+svg:hover {
+    cursor: pointer;
 }

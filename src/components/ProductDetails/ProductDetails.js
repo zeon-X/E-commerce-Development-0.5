@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProductDetails.css';
 
 import productImg from '../../assets/product/paul-cuoco-CO2vOhPqlrM-unsplash.jpg';
 
 const ProductDetails = () => {
+
+    const [quantity, setQuantity] = useState(0);
+
+    console.log(typeof quantity);
+
     return (
         <div className='product_details_container pt-10 pb-20'>
             <div className='product_details_content'>
@@ -89,24 +94,59 @@ const ProductDetails = () => {
 
                     {/* QuanTITY  */}
 
-                    <div className='quantity_div mt-5 mb-10'>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mr-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    <div className='flex items-center mb-10'>
+                        <div className='quantity_div'>
 
-                        <input style={{
-                            border: "1px solid grey",
-                            borderRadius: "4px",
-                            width: "70px",
-                            padding: "0px 10px"
-                        }} type="number" placeholder='0' />
+                            {/* <p>Quantity : </p> */}
 
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 ml-3 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                            <svg
+                                onClick={() => {
+                                    if (quantity !== 0) {
+                                        setQuantity(quantity - 1);
+                                    }
+                                }}
+                                xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mr-3 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+
+
+                            <input
+                                value={quantity}
+                                onChange={(event) => {
+                                    setQuantity(parseInt(event.target.value));
+                                }}
+                                style={{
+                                    border: "1px solid grey",
+                                    borderRadius: "4px",
+                                    width: "70px",
+                                    padding: "0px 10px",
+                                    margin: "0px",
+                                    appearance: "none"
+                                }} type="number" placeholder='0' />
+
+                            <svg
+                                onClick={() => {
+                                    setQuantity(quantity + 1);
+
+                                }}
+                                xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 ml-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+
+
+
+                        <div className='flex justify-center items-center ml-10'>
+                            <label for="country" className='mr-5'>Color</label>
+                            <select id="country" name="country">
+                                <option value="australia">Red</option>
+                                <option value="canada">Blue</option>
+                                <option value="usa">Greeen</option>
+                            </select>
+                        </div>
+
+
                     </div>
-
-
 
 
 
